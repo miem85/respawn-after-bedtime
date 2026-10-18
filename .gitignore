@@ -1,0 +1,16 @@
+# Operativsystem
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# VS Code - personliga inställningar
+.vscode/
+
+# Tillfälliga filer
+*.tmp
+*.log
+*~
+
+# Miljöfiler med eventuella hemligheter
+.env
+.env.*
