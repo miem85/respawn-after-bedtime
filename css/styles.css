@@ -1,140 +1,216 @@
+
 /* ========================================
-   GRUNDLÄGGANDE INSTÄLLNINGAR
+   GRUNDINSTÄLLNINGAR
+   Mobile First
 ======================================== */
 
-/* Gör att padding och border räknas in
-   i elementens angivna bredd och höjd */
+/* Färgvariabler för webbplatsens tema */
+:root {
+  --color-background: #00101f;
+  --color-header: #001326;
+  --color-text: #ffffff;
+  --color-cyan: #00d9f4;
+  --color-purple: #a238ff;
+  --color-border: #075485;
+}
+
+/* Gör elementens storlek lättare att hantera */
 * {
   box-sizing: border-box;
 }
 
-/* Tar bort webbläsarens standardmarginal
-   och anger sidans grundläggande utseende */
+/* Webbplatsens grundläggande utseende */
 body {
   margin: 0;
-  background-color: #0b1020;
-  color: #ffffff;
+  background-color: var(--color-background);
+  color: var(--color-text);
   font-family: Arial, sans-serif;
 }
 
 /* ========================================
-   HEADER OCH NAVIGATION
+   HEADER - MOBIL
 ======================================== */
 
-/* Flexbox placerar logotypen och
-   navigeringen bredvid varandra */
-header {
+/* Mobilens sidhuvud innehåller logotyp
+   till vänster och menyknapp till höger */
+.site-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 5%;
-  background-color: #10182b;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 14px 6%;
+  background-color: var(--color-header);
+  border: 1px solid var(--color-border);
 }
 
-/* Begränsar logotypens bredd */
+/* Logotypens storlek och proportioner */
 .logo img {
   display: block;
-  width: 220px;
+  width: 160px;
   max-width: 100%;
   height: auto;
 }
 
-/* Placerar navigeringslänkarna på en rad
-   och tar bort listans standardutseende */
-nav ul {
+/* Hamburgermenyknappen */
+.menu-toggle {
+  display: block;
+  padding: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* De tre vita strecken i hamburgermenyn */
+.menu-toggle span {
+  display: block;
+  width: 27px;
+  height: 3px;
+  margin: 5px 0;
+  background-color: var(--color-text);
+}
+
+/* ========================================
+   NAVIGATION - MOBIL
+======================================== */
+
+/* Navigationen är dold tills användaren
+   öppnar den med hamburgermenyknappen */
+#main-nav {
+  display: none;
+  width: 100%;
+}
+
+/* Klassen open läggs till med JavaScript */
+#main-nav.open {
+  display: block;
+}
+
+/* Länkarna placeras vertikalt */
+#main-nav ul {
   display: flex;
-  align-items: center;
-  gap: 30px;
-  list-style: none;
+  flex-direction: column;
+  gap: 0;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
-/* Utformar navigeringens länkar */
-nav a {
-  color: #ffffff;
+/* Navigeringslänkarnas utseende */
+#main-nav a {
+  display: block;
+  padding: 14px 8px;
+  color: var(--color-text);
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.2s ease;
+  font-size: 0.9rem;
 }
 
-/* Ändrar färg när muspekaren
-   befinner sig över en länk */
-nav a:hover {
-  color: #36c9f5;
+/* Markerar aktiv sida och hover */
+#main-nav a:hover,
+#main-nav a[aria-current="page"] {
+  color: var(--color-cyan);
 }
 
-/* Markerar den aktuella sidan */
-nav a[aria-current="page"] {
-  color: #36c9f5;
-}
-
-/* Döljer hamburgermenyn på större skärmar */
-.menu-toggle {
+/* Döljer desktopfunktionerna på mobil */
+.header-actions {
   display: none;
 }
 
 /* ========================================
-   RESPONSIV NAVIGATION
+   TILLGÄNGLIGHET
 ======================================== */
 
-/* Anpassar sidhuvudet för skärmar
-   som är högst 768 pixlar breda */
-@media (max-width: 768px) {
-  /* Ger mobilens header mindre marginaler */
-  header {
-    flex-wrap: wrap;
-    padding: 15px 5%;
+/* Visar tydligt vilket element som har
+   tangentbordsfokus */
+.site-header a:focus-visible,
+.site-header button:focus-visible {
+  outline: 2px solid var(--color-cyan);
+  outline-offset: 4px;
+}
+
+/* ========================================
+   DESKTOP
+   Från 769 pixlars skärmbredd
+======================================== */
+
+@media (min-width: 769px) {
+
+  /* Sidhuvudets innehåll placeras på en rad */
+  .site-header {
+    flex-wrap: nowrap;
+    gap: 24px;
+    padding: 16px 4%;
   }
 
-  /* Gör logotypen mindre på mobil */
+  /* Större logotyp på desktop */
   .logo img {
-    width: 160px;
+    width: 190px;
   }
 
-  /* Visar hamburgermenyknappen */
+  /* Hamburgermenyknappen döljs */
   .menu-toggle {
+    display: none;
+  }
+
+  /* Huvudnavigationen visas alltid */
+  #main-nav,
+  #main-nav.open {
     display: block;
+    width: auto;
+  }
+
+  /* Navigeringslänkarna placeras horisontellt */
+  #main-nav ul {
+    flex-direction: row;
+    align-items: center;
+    gap: 26px;
+  }
+
+  /* Anpassar länkarna till desktop */
+  #main-nav a {
+    padding: 12px 4px;
+    white-space: nowrap;
+  }
+
+  /* Understrykning för aktiv sida */
+  #main-nav a[aria-current="page"] {
+    border-bottom: 2px solid var(--color-cyan);
+  }
+
+  /* Visar sökikon och Discord-knapp */
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  /* Sökknappens utseende */
+  .search-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
     background: none;
     border: none;
-    padding: 10px;
+    color: var(--color-text);
     cursor: pointer;
   }
 
-  /* Skapar hamburgermenyikonens tre streck */
-  .menu-toggle span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px 0;
-    background-color: #36c9f5;
+  /* Discord-knappen enligt mockupen */
+  .discord-button {
+    display: inline-block;
+    padding: 11px 18px;
+    background-color: #32105e;
+    border: 1px solid var(--color-purple);
+    border-radius: 6px;
+    color: var(--color-text);
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
   }
 
-  /* Döljer navigationen tills den öppnas
-     med JavaScript */
-  nav {
-    display: none;
-    width: 100%;
-  }
-
-  /* Denna klass läggs till med JavaScript
-     när användaren öppnar mobilmenyn */
-  nav.open {
-    display: block;
-  }
-
-  /* Placerar länkarna under varandra */
-  nav ul {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    padding-top: 15px;
-  }
-
-  /* Gör länkarna lättare att trycka på
-     med fingret på en mobilskärm */
-  nav a {
-    display: block;
-    padding: 12px 0;
+  /* Hover-effekt för Discord-knappen */
+  .discord-button:hover {
+    background-color: #54209c;
   }
 }
