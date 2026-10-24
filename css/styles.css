@@ -1,0 +1,140 @@
+/* ========================================
+   GRUNDLÄGGANDE INSTÄLLNINGAR
+======================================== */
+
+/* Gör att padding och border räknas in
+   i elementens angivna bredd och höjd */
+* {
+  box-sizing: border-box;
+}
+
+/* Tar bort webbläsarens standardmarginal
+   och anger sidans grundläggande utseende */
+body {
+  margin: 0;
+  background-color: #0b1020;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+/* ========================================
+   HEADER OCH NAVIGATION
+======================================== */
+
+/* Flexbox placerar logotypen och
+   navigeringen bredvid varandra */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 5%;
+  background-color: #10182b;
+}
+
+/* Begränsar logotypens bredd */
+.logo img {
+  display: block;
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Placerar navigeringslänkarna på en rad
+   och tar bort listans standardutseende */
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Utformar navigeringens länkar */
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+/* Ändrar färg när muspekaren
+   befinner sig över en länk */
+nav a:hover {
+  color: #36c9f5;
+}
+
+/* Markerar den aktuella sidan */
+nav a[aria-current="page"] {
+  color: #36c9f5;
+}
+
+/* Döljer hamburgermenyn på större skärmar */
+.menu-toggle {
+  display: none;
+}
+
+/* ========================================
+   RESPONSIV NAVIGATION
+======================================== */
+
+/* Anpassar sidhuvudet för skärmar
+   som är högst 768 pixlar breda */
+@media (max-width: 768px) {
+  /* Ger mobilens header mindre marginaler */
+  header {
+    flex-wrap: wrap;
+    padding: 15px 5%;
+  }
+
+  /* Gör logotypen mindre på mobil */
+  .logo img {
+    width: 160px;
+  }
+
+  /* Visar hamburgermenyknappen */
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  /* Skapar hamburgermenyikonens tre streck */
+  .menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: #36c9f5;
+  }
+
+  /* Döljer navigationen tills den öppnas
+     med JavaScript */
+  nav {
+    display: none;
+    width: 100%;
+  }
+
+  /* Denna klass läggs till med JavaScript
+     när användaren öppnar mobilmenyn */
+  nav.open {
+    display: block;
+  }
+
+  /* Placerar länkarna under varandra */
+  nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding-top: 15px;
+  }
+
+  /* Gör länkarna lättare att trycka på
+     med fingret på en mobilskärm */
+  nav a {
+    display: block;
+    padding: 12px 0;
+  }
+}
