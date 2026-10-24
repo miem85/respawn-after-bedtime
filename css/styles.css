@@ -230,6 +230,152 @@ body {
 }
 
 /* ========================================
+   FOOTER - MOBIL
+======================================== */
+
+.site-footer {
+  background-color: var(--color-header);
+  border: 1px solid var(--color-border);
+}
+
+.footer-content {
+  padding: 30px 6%;
+}
+
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-logo img {
+  display: block;
+  width: 180px;
+  height: auto;
+}
+
+.footer-nav {
+  display: none;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-social img {
+  display: block;
+  width: 28px;
+  height: 28px;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.footer-legal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.footer-legal a {
+  color: var(--color-text);
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.footer-legal a:hover {
+  color: var(--color-cyan);
+}
+
+.footer-mobile {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-header);
+  border-top: 1px solid var(--color-border);
+  z-index: 100;
+}
+
+.footer-mobile ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0;
+  padding: 12px 4px;
+  list-style: none;
+}
+
+.footer-mobile a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  color: var(--color-text);
+  font-size: 0.75rem;
+  text-decoration: none;
+}
+
+.footer-mobile img {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+/* Gör footerikonerna vita */
+.footer-social img,
+.footer-mobile img {
+  filter: brightness(0) invert(1);
+}
+
+/* Ändrar ikonernas färg vid hover */
+.footer-social a:hover img,
+.footer-mobile a:hover img {
+  filter: brightness(0) saturate(100%) invert(75%) sepia(77%) saturate(2500%)
+    hue-rotate(145deg);
+}
+
+/* Markerar ikonen för den aktiva sidan */
+.footer-mobile a[aria-current="page"] img {
+  filter: brightness(0) saturate(100%) invert(75%) sepia(77%) saturate(2500%)
+    hue-rotate(145deg);
+}
+
+.footer-mobile a[aria-current="page"],
+.footer-mobile a:hover {
+  color: var(--color-cyan);
+}
+
+/* Ger plats åt den fasta mobilnavigationen */
+body {
+  padding-bottom: 75px;
+}
+
+/* ========================================
    DESKTOP
    Från 769 pixlars skärmbredd
 ======================================== */
@@ -361,5 +507,79 @@ body {
   .hero-buttons {
     flex-direction: row;
     flex-wrap: wrap;
+  }
+
+  /* ========================================
+   FOOTER - DESKTOP
+======================================== */
+
+  .site-footer {
+    padding: 0 4%;
+  }
+
+  .footer-content {
+    padding: 20px 0;
+  }
+
+  .footer-top {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  .footer-logo img {
+    width: 230px;
+  }
+
+  .footer-nav {
+    display: block;
+  }
+
+  .footer-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .footer-nav a {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .footer-nav a:hover {
+    color: var(--color-cyan);
+  }
+
+  .footer-social {
+    gap: 24px;
+    padding-left: 30px;
+    border-left: 2px solid var(--color-border);
+  }
+
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 16px;
+    text-align: left;
+  }
+
+  .footer-bottom p {
+    font-size: 0.9rem;
+  }
+
+  .footer-legal a {
+    font-size: 0.9rem;
+  }
+
+  .footer-mobile {
+    display: none;
+  }
+
+  body {
+    padding-bottom: 0;
   }
 }
