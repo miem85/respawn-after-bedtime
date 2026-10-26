@@ -462,6 +462,32 @@ body {
 }
 
 /* ========================================
+   SPELKORT - BETYG OCH RELEASEDATUM
+======================================== */
+
+/* Behållare för betyg och releasedatum */
+.game-card-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  font-size: 0.75rem;
+}
+
+/* Spelets betyg från RAWG */
+.game-card-rating {
+  color: #facc15;
+  font-weight: 600;
+}
+
+/* Spelets releasedatum */
+.game-card-release {
+  color: #b6c4d5;
+}
+
+/* ========================================
    DESKTOP
    Från 769 pixlars skärmbredd
 ======================================== */

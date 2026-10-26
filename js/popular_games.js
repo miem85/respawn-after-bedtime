@@ -38,6 +38,25 @@ async function loadPopularGames() {
       const title = document.createElement("h3");
       title.textContent = game.name;
 
+      // Skapar en behållare för spelets betyg och releasedatum
+      const gameInfo = document.createElement("div");
+      gameInfo.classList.add("game-card-info");
+
+      // Skapar texten för spelets RAWG-betyg
+      const rating = document.createElement("span");
+      rating.classList.add("game-card-rating");
+      rating.textContent = `★ ${game.rating.toFixed(2)} / 5`;
+
+      // Skapar texten för spelets releasedatum
+      const releaseDate = document.createElement("span");
+      releaseDate.classList.add("game-card-release");
+
+      const formattedDate = new Date(`${game.released}T00:00:00`);
+      releaseDate.textContent = `Släppt: ${formattedDate.toLocaleDateString("sv-SE")}`;
+
+      // Lägger in betyg och releasedatum i behållaren
+      gameInfo.appendChild(rating);
+      gameInfo.appendChild(releaseDate);
       const genres = document.createElement("div");
       genres.classList.add("game-card-genres");
 
@@ -52,6 +71,7 @@ async function loadPopularGames() {
 
       content.appendChild(title);
       content.appendChild(genres);
+      content.appendChild(gameInfo);
 
       card.appendChild(image);
       card.appendChild(content);
