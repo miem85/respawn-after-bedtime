@@ -512,6 +512,62 @@ body {
 }
 
 /* ========================================
+   VARFÖR RESPAWN AFTER BEDTIME?
+======================================== */
+
+/* Sektionen med communityts fördelar */
+.community-benefits {
+  padding: 2rem 1rem;
+}
+
+/* Fördelarna visas under varandra på mobil */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* Ikon till vänster och text till höger */
+.benefit-card {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  column-gap: 1rem;
+  align-items: center;
+}
+
+/* Ikonernas storlek */
+.benefit-icon img {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+/* Cyan ikoner för första och tredje kortet */
+.benefit-card:nth-child(odd) .benefit-icon img {
+  filter: brightness(0) saturate(100%) invert(65%) sepia(92%) saturate(1630%)
+    hue-rotate(140deg) brightness(103%) contrast(105%);
+}
+
+/* Lila ikoner för andra och fjärde kortet */
+.benefit-card:nth-child(even) .benefit-icon img {
+  filter: brightness(0) saturate(100%) invert(32%) sepia(94%) saturate(3700%)
+    hue-rotate(260deg) brightness(105%) contrast(105%);
+}
+
+/* Rubriker */
+.benefit-card h2 {
+  font-size: 1rem;
+  margin: 0 0 0.4rem;
+}
+
+/* Beskrivningar */
+.benefit-card p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ========================================
    DESKTOP
    Från 769 pixlars skärmbredd
 ======================================== */
@@ -747,5 +803,47 @@ body {
   .games-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 1.5rem;
+  }
+
+  /* ========================================
+   COMMUNITYFÖRDELAR - DESKTOP
+======================================== */
+
+  /* Fyra kolumner bredvid varandra */
+  .benefits-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+  }
+
+  /* Ikonen placeras ovanför texten */
+  .benefit-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    padding: 1rem 1.5rem;
+  }
+
+  /* Avdelare mellan korten */
+  .benefit-card:not(:last-child) {
+    border-right: 1px solid var(--color-border);
+  }
+
+  /* Ikoner */
+  .benefit-icon img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1rem;
+  }
+
+  /* Rubriker */
+  .benefit-card h2 {
+    margin-bottom: 0.75rem;
+  }
+
+  /* Beskrivningar */
+  .benefit-card p {
+    line-height: 1.6;
   }
 }
