@@ -9,9 +9,6 @@ const gamesContainer = document.querySelector(
   "#popular-games-list, #games-list",
 );
 
-// Gör att skärmläsare kan uppmärksamma felmeddelanden
-gamesContainer.setAttribute("role", "status");
-
 // Hämtar spelinformationen från vår lokala JSON-fil
 async function loadPopularGames() {
   try {

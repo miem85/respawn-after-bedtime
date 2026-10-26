@@ -434,7 +434,7 @@ body {
 }
 
 /* Spelets titel */
-.game-card-content h3 {
+.game-card-content h2 {
   color: var(--color-text);
   font-size: 1.125rem;
   margin-bottom: 0.75rem;
@@ -524,12 +524,13 @@ body {
   color: #b6c4d5;
 }
 
-/* Gör hela spelkortet klickbart */
+/* Gör hela spelkortet klickbart och tar bort länkens standardutseende */
 .game-card-link {
   display: block;
   height: 100%;
   color: inherit;
   text-decoration: none;
+  cursor: pointer;
 }
 
 /* Markerar spelkortet vid tangentbordsfokus */
@@ -541,11 +542,6 @@ body {
 /* Markerar spelkortet när muspekaren förs över det */
 .game-card:hover {
   border-color: var(--color-cyan);
-}
-
-/* Visar att spelkortet är klickbart */
-.game-card-link {
-  cursor: pointer;
 }
 
 /* ========================================
