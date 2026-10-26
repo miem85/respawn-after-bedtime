@@ -14,3 +14,11 @@ desktop.ini
 # Miljöfiler med eventuella hemligheter
 .env
 .env.*
+
+# Lokala API-nycklar och miljövariabler
+.env
+.env.*
+!.env.example
+
+# Tillfälligt RAWG-test med API-nyckel
+js/games.js

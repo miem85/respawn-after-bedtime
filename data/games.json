@@ -1,0 +1,46 @@
+[
+  {
+    "name": "Helldivers 2",
+    "image": "images/games/helldivers_2.webp",
+    "genres": [
+      "Action",
+      "Co-op"
+    ],
+    "rating": 4.24,
+    "released": "2024-02-08",
+    "rawg_id": 976564
+  },
+  {
+    "name": "Baldur's Gate 3",
+    "image": "images/games/baldurs_gate_3.jpg",
+    "genres": [
+      "RPG",
+      "Äventyr"
+    ],
+    "rating": 4.43,
+    "released": "2023-08-03",
+    "rawg_id": 324997
+  },
+  {
+    "name": "Sea of Thieves",
+    "image": "images/games/sea_of_thieves.jpg",
+    "genres": [
+      "Äventyr",
+      "Multiplayer"
+    ],
+    "rating": 3.69,
+    "released": "2018-03-20",
+    "rawg_id": 50781
+  },
+  {
+    "name": "Diablo IV",
+    "image": "images/games/diablo_4.webp",
+    "genres": [
+      "Action",
+      "RPG"
+    ],
+    "rating": 3.73,
+    "released": "2023-06-06",
+    "rawg_id": 388309
+  }
+]
