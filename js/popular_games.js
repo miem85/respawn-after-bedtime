@@ -9,6 +9,9 @@ const gamesContainer = document.querySelector(
   "#popular-games-list, #games-list",
 );
 
+// Gör att skärmläsare kan uppmärksamma felmeddelanden
+gamesContainer.setAttribute("role", "status");
+
 // Hämtar spelinformationen från vår lokala JSON-fil
 async function loadPopularGames() {
   try {
@@ -22,7 +25,7 @@ async function loadPopularGames() {
     // Omvandlar JSON-informationen till en JavaScript-array
     const popularGames = await response.json();
 
-    // Skapar ett spelkort för varje spel
+    // Går igenom JSON-datan och skapar ett HTML-spelkort för varje spel
     popularGames.forEach((game) => {
       const card = document.createElement("article");
       card.classList.add("game-card");
@@ -95,7 +98,7 @@ async function loadPopularGames() {
       gamesContainer.appendChild(card);
     });
   } catch (error) {
-    // Visar ett felmeddelande om spelinformationen inte kan hämtas
+    // Loggar felet i konsolen och visar ett användarvänligt meddelande på sidan
     console.error("Fel vid hämtning av spel:", error);
     gamesContainer.textContent = "Spelen kunde inte laddas just nu.";
   }

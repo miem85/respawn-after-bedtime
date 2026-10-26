@@ -22,3 +22,13 @@ menuToggle.addEventListener("click", () => {
   // Ändrar knappens beskrivning beroende på menyens tillstånd
   menuToggle.setAttribute("aria-label", isOpen ? "Stäng menyn" : "Öppna menyn");
 });
+
+// Stänger mobilmenyn när användaren trycker på Escape
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && mainNav.classList.contains("open")) {
+    mainNav.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Öppna menyn");
+    menuToggle.focus();
+  }
+});
