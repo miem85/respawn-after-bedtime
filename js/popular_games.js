@@ -1,8 +1,8 @@
+"use strict";
+
 /* ========================================
    POPULÄRA SPEL I COMMUNITYT
 ======================================== */
-
-"use strict";
 
 // Hitta spelbehållaren på startsidan eller spelsidan
 const gamesContainer = document.querySelector(

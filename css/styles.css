@@ -599,6 +599,86 @@ body {
 }
 
 /* ========================================
+   KONTAKTFORMULÄR - MOBIL
+======================================== */
+
+/* Sektionen med kontaktformuläret */
+.contact-section {
+  padding: 2rem 1rem 3rem;
+  border-top: 1px solid var(--color-border);
+}
+
+/* Begränsar formulärets bredd för bättre läsbarhet */
+.contact-section form {
+  max-width: 600px;
+  margin: 2rem 0 0;
+}
+
+/* Varje fält får en egen rad */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Etiketter ovanför formulärfälten */
+.form-group label {
+  font-weight: bold;
+}
+
+/* Formulärfältens utseende */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background-color: var(--color-header);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font: inherit;
+}
+
+/* Markerar aktivt fält */
+.form-group input:focus-visible,
+.form-group textarea:focus-visible {
+  outline: 2px solid var(--color-cyan);
+  outline-offset: 2px;
+}
+
+/* Markerar felaktigt ifyllda formulärfält */
+.form-group input.input-error,
+.form-group textarea.input-error {
+  border-color: #ff6b6b;
+}
+
+/* Tydlig fokusmarkering även på felaktiga fält */
+.form-group input.input-error:focus,
+.form-group textarea.input-error:focus {
+  outline: 2px solid #ff6b6b;
+  outline-offset: 2px;
+}
+
+/* Meddelandefältet kan ändras i höjdled */
+.form-group textarea {
+  resize: vertical;
+}
+
+/* Plats för felmeddelanden och återkoppling */
+#form-feedback {
+  margin: 0 0 1.5rem;
+}
+
+#form-feedback:empty {
+  display: none;
+}
+
+/* Skicka-knappen */
+.contact-section button[type="submit"] {
+  cursor: pointer;
+}
+
+/* ========================================
    DESKTOP
    Från 769 pixlars skärmbredd
 ======================================== */

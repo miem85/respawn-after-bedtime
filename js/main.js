@@ -1,7 +1,9 @@
+"use strict";
+
 /* ========================================
    MOBILMENY
 ======================================== */
-"use strict";
+
 // Hämtar hamburgermenyknappen och navigationen från DOM
 const menuToggle = document.querySelector(".menu-toggle");
 const mainNav = document.querySelector("#main-nav");
