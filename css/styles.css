@@ -685,8 +685,16 @@ body {
     text-decoration: none;
   }
 
-  .footer-nav a:hover {
+  /* Markerar aktiv sida och hover i footern */
+  .footer-nav a:hover,
+  .footer-nav a[aria-current="page"] {
     color: var(--color-cyan);
+  }
+
+  /* Understrykning för aktiv sida i footern */
+  .footer-nav a[aria-current="page"] {
+    border-bottom: 2px solid var(--color-cyan);
+    padding-bottom: 10px;
   }
 
   .footer-social {
