@@ -487,6 +487,30 @@ body {
   color: #b6c4d5;
 }
 
+/* Gör hela spelkortet klickbart */
+.game-card-link {
+  display: block;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Markerar spelkortet vid tangentbordsfokus */
+.game-card-link:focus-visible {
+  outline: 2px solid var(--color-cyan);
+  outline-offset: -3px;
+}
+
+/* Markerar spelkortet när muspekaren förs över det */
+.game-card:hover {
+  border-color: var(--color-cyan);
+}
+
+/* Visar att spelkortet är klickbart */
+.game-card-link {
+  cursor: pointer;
+}
+
 /* ========================================
    DESKTOP
    Från 769 pixlars skärmbredd

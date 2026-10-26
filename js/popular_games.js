@@ -25,6 +25,17 @@ async function loadPopularGames() {
       const card = document.createElement("article");
       card.classList.add("game-card");
 
+      // Skapar en länk till spelets officiella webbplats
+      const gameLink = document.createElement("a");
+      gameLink.classList.add("game-card-link");
+      gameLink.href = game.website;
+      gameLink.target = "_blank";
+      gameLink.rel = "noopener noreferrer";
+      gameLink.setAttribute(
+        "aria-label",
+        `${game.name} – besök spelets officiella webbplats (öppnas i ny flik)`,
+      );
+
       // Skapar spelbilden
       const image = document.createElement("img");
       image.classList.add("game-card-image");
@@ -62,19 +73,22 @@ async function loadPopularGames() {
 
       // Skapar genreetiketterna
       game.genres.forEach((genre) => {
-        const button = document.createElement("button");
-        button.type = "button";
-        button.classList.add("genre-button");
-        button.textContent = genre;
-        genres.appendChild(button);
+        const genreLabel = document.createElement("span");
+        genreLabel.classList.add("genre-button");
+        genreLabel.textContent = genre;
+        genres.appendChild(genreLabel);
       });
 
       content.appendChild(title);
       content.appendChild(genres);
       content.appendChild(gameInfo);
 
-      card.appendChild(image);
-      card.appendChild(content);
+      // Lägger bilden och innehållet inuti länken
+      gameLink.appendChild(image);
+      gameLink.appendChild(content);
+
+      // Lägger länken inuti spelkortet
+      card.appendChild(gameLink);
 
       gamesContainer.appendChild(card);
     });

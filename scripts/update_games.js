@@ -17,24 +17,28 @@ const selectedGames = [
     name: "Helldivers 2",
     image: "images/games/helldivers_2.webp",
     genres: ["Action", "Co-op"],
+    website: "https://www.playstation.com/games/helldivers-2/",
   },
   {
     id: 324997,
     name: "Baldur's Gate 3",
     image: "images/games/baldurs_gate_3.jpg",
     genres: ["RPG", "Äventyr"],
+    website: "https://baldursgate3.game/",
   },
   {
     id: 50781,
     name: "Sea of Thieves",
     image: "images/games/sea_of_thieves.jpg",
     genres: ["Äventyr", "Multiplayer"],
+    website: "https://www.seaofthieves.com/",
   },
   {
     id: 388309,
     name: "Diablo IV",
     image: "images/games/diablo_4.webp",
     genres: ["Action", "RPG"],
+    website: "https://diablo4.blizzard.com/",
   },
 ];
 
@@ -66,6 +70,7 @@ async function updateGames() {
       rating: data.rating,
       released: data.released,
       rawg_id: data.id,
+      website: game.website,
     });
 
     console.log(`Hämtade ${game.name}`);

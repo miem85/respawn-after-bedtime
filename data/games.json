@@ -8,7 +8,8 @@
     ],
     "rating": 4.24,
     "released": "2024-02-08",
-    "rawg_id": 976564
+    "rawg_id": 976564,
+    "website": "https://www.playstation.com/games/helldivers-2/"
   },
   {
     "name": "Baldur's Gate 3",
@@ -19,7 +20,8 @@
     ],
     "rating": 4.43,
     "released": "2023-08-03",
-    "rawg_id": 324997
+    "rawg_id": 324997,
+    "website": "https://baldursgate3.game/"
   },
   {
     "name": "Sea of Thieves",
@@ -30,7 +32,8 @@
     ],
     "rating": 3.69,
     "released": "2018-03-20",
-    "rawg_id": 50781
+    "rawg_id": 50781,
+    "website": "https://www.seaofthieves.com/"
   },
   {
     "name": "Diablo IV",
@@ -41,6 +44,7 @@
     ],
     "rating": 3.73,
     "released": "2023-06-06",
-    "rawg_id": 388309
+    "rawg_id": 388309,
+    "website": "https://diablo4.blizzard.com/"
   }
 ]
