@@ -375,6 +375,52 @@ body {
   padding-bottom: 75px;
 }
 
+/* Spelkortets grundutseende */
+.game-card {
+  background-color: var(--color-header);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Spelbilden fyller kortets bredd */
+.game-card-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* Innehållet under spelbilden */
+.game-card-content {
+  padding: 1rem;
+}
+
+/* Spelets titel */
+.game-card-content h3 {
+  color: var(--color-text);
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Behållare för genreetiketterna */
+.game-card-genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Genreetiketternas grundutseende */
+.genre-button {
+  background-color: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--color-purple);
+  border-radius: 20px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
 /* ========================================
    DESKTOP
    Från 769 pixlars skärmbredd
@@ -451,6 +497,44 @@ body {
   .discord-button:hover {
     background-color: transparent;
     border-color: var(--color-cyan);
+  }
+
+  /* ========================================
+   POPULÄRA SPEL I COMMUNITYT
+======================================== */
+
+  /* Sektionens grundutseende för mobil */
+  .popular-games {
+    padding: 2rem 1rem;
+    background-color: var(--color-background);
+  }
+
+  /* Rubrik och länk till alla spel */
+  .games-header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Sektionens rubrik */
+  .games-header h2 {
+    color: var(--color-text);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+
+  /* Länk till sidan med alla spel */
+  .games-link {
+    color: var(--color-cyan);
+    text-decoration: none;
+  }
+
+  /* Behållare för spelkorten */
+  .games-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   /* ========================================
@@ -581,5 +665,27 @@ body {
 
   body {
     padding-bottom: 0;
+  }
+
+  /* ========================================
+   POPULÄRA SPEL I COMMUNITYT - DESKTOP
+======================================== */
+
+  /* Anpassar sektionens avstånd för större skärmar */
+  .popular-games {
+    padding: 3rem 2rem;
+  }
+
+  /* Placerar rubriken till vänster och länken till höger */
+  .games-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Visar fyra spelkort bredvid varandra */
+  .games-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
   }
 }
