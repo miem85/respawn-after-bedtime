@@ -48,7 +48,7 @@ async function loadPopularGames() {
       const content = document.createElement("div");
       content.classList.add("game-card-content");
 
-      const title = document.createElement("2");
+      const title = document.createElement("h2");
       title.textContent = game.name;
 
       // Skapar en behållare för spelets betyg och releasedatum
