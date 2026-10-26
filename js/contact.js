@@ -82,6 +82,7 @@ contactForm.addEventListener("submit", (event) => {
 
   // Visar felmeddelande och flyttar fokus vid fel
   if (firstInvalidField) {
+    formFeedback.setAttribute("role", "alert");
     formFeedback.textContent = hasEmptyField
       ? "Du måste fylla i alla fält."
       : "Ange en giltig e-postadress.";
@@ -92,6 +93,7 @@ contactForm.addEventListener("submit", (event) => {
   }
 
   // Formuläret är korrekt ifyllt, men skickas inte till någon server
+  formFeedback.setAttribute("role", "status");
   formFeedback.textContent =
     "Alla uppgifter är korrekt ifyllda! Formuläret är en demonstration och skickar inga meddelanden.";
 
