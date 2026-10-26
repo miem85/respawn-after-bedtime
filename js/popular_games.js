@@ -4,8 +4,10 @@
 
 "use strict";
 
-// Hämtar behållaren där spelkorten ska visas
-const gamesContainer = document.querySelector("#popular-games-list");
+// Hitta spelbehållaren på startsidan eller spelsidan
+const gamesContainer = document.querySelector(
+  "#popular-games-list, #games-list",
+);
 
 // Hämtar spelinformationen från vår lokala JSON-fil
 async function loadPopularGames() {

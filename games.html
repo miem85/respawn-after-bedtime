@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Upptäck spel och hitta nya favoriter tillsammans med andra vuxna gamers i Respawn After Bedtime."
+    />
+    <title>Spel | Respawn After Bedtime</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <script src="js/main.js" defer></script>
+    <script src="js/popular_games.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <!-- Webbplatsens logotyp -->
+      <a
+        href="index.html"
+        class="logo"
+        aria-label="Respawn After Bedtime – startsida"
+      >
+        <img src="images/logo.png" alt="Respawn After Bedtime" />
+      </a>
+
+      <!-- Knapp för mobilnavigation -->
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Öppna menyn"
+        aria-expanded="false"
+        aria-controls="main-nav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Huvudnavigation -->
+      <nav id="main-nav" aria-label="Huvudnavigation">
+        <ul>
+          <li><a href="index.html">Hem</a></li>
+          <li><a href="games.html" aria-current="page">Spel</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="bli-medlem.html">Bli medlem</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <!-- Funktioner till höger i desktopmenyn -->
+      <div class="header-actions">
+        <button class="search-button" type="button" aria-label="Sök">
+          <svg
+            viewBox="0 0 24 24"
+            width="22"
+            height="22"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="m16 16 5 5"></path>
+          </svg>
+        </button>
+
+        <a href="https://discord.com/" class="discord-button hero-button">
+          Discord
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <!-- ========================================
+           SPEL
+      ======================================== -->
+
+      <section class="popular-games" aria-labelledby="games-page-title">
+        <h1 id="games-page-title">UTFORSKA SPEL</h1>
+        <p>
+          Upptäck spel som engagerar vårt community. Hitta nya favoriter och
+          spel att uppleva tillsammans.
+        </p>
+
+        <!-- Här bygger vi spelbiblioteket -->
+        <div class="games-grid" id="games-list"></div>
+      </section>
+
+      <!-- ========================================
+     HITTA SPELKOMPISAR
+======================================== -->
+
+      <section class="games-community" aria-labelledby="games-community-title">
+        <h2 id="games-community-title">SAKNAR DU NÅGOT SPEL?</h2>
+
+        <p>
+          Tipsa om dina favoritspel och hitta andra att spela med i vår
+          Discord-community.
+        </p>
+
+        <a href="https://discord.com/" class="hero-button">
+          Gå med på Discord
+        </a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <!-- Footer för desktop och mobil -->
+      <div class="footer-content">
+        <!-- Övre delen med logotyp, navigation och sociala medier -->
+        <div class="footer-top">
+          <a href="index.html" class="footer-logo">
+            <img src="images/logo.png" alt="Respawn After Bedtime" />
+          </a>
+
+          <nav class="footer-nav" aria-label="Footernavigation">
+            <ul>
+              <li><a href="index.html">Hem</a></li>
+              <li><a href="games.html" aria-current="page">Spel</a></li>
+              <li><a href="community.html">Community</a></li>
+              <li><a href="bli-medlem.html">Bli medlem</a></li>
+              <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+          </nav>
+
+          <!-- Sociala medier -->
+          <div class="footer-social">
+            <a href="https://discord.com/" aria-label="Discord">
+              <img src="images/discord.svg" alt="" />
+            </a>
+
+            <a href="https://youtube.com/" aria-label="YouTube">
+              <img src="images/youtube.svg" alt="" />
+            </a>
+
+            <a href="https://instagram.com/" aria-label="Instagram">
+              <img src="images/instagram.svg" alt="" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Nedre delen med copyright och juridiska länkar -->
+        <div class="footer-bottom">
+          <p>&copy; 2026 Respawn After Bedtime. Kids asleep. Game on.</p>
+
+          <div class="footer-legal">
+            <a href="#">Integritetspolicy</a>
+            <span aria-hidden="true">|</span>
+            <a href="#">Användarvillkor</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobilnavigation längst ner -->
+      <nav class="footer-mobile" aria-label="Mobilnavigation">
+        <ul>
+          <li>
+            <a href="index.html">
+              <img src="images/house.svg" alt="" />
+              <span>Hem</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="games.html" aria-current="page">
+              <img src="images/gamepad.svg" alt="" />
+              <span>Spel</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="community.html">
+              <img src="images/users.svg" alt="" />
+              <span>Community</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="bli-medlem.html">
+              <img src="images/user.svg" alt="" />
+              <span>Bli medlem</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>
