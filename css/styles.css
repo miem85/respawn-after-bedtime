@@ -516,6 +516,13 @@ body {
    VARFÖR RESPAWN AFTER BEDTIME?
 ======================================== */
 
+/* Rubrik ovanför Community-sidans kortsektion */
+.community-section-title {
+  margin: 0;
+  padding: 2rem 1rem 1.5rem;
+  font-size: 1.5rem;
+}
+
 /* Sektionen med communityts fördelar */
 .community-benefits {
   padding: 2rem 1rem;
@@ -557,7 +564,8 @@ body {
 }
 
 /* Rubriker */
-.benefit-card h2 {
+.benefit-card h2,
+.benefit-card h3 {
   font-size: 1rem;
   margin: 0 0 0.4rem;
 }
@@ -836,6 +844,27 @@ body {
   .benefits-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 0;
+  }
+
+  /* ========================================
+   COMMUNITY-SIDA – TRE KOLUMNER
+======================================== */
+
+  /* Tre kolumner endast på Community-sidan */
+  .community-section-title + .community-benefits .benefits-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  /* Jämnt avstånd mellan korten och sektionens kanter */
+  .community-section-title + .community-benefits {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  /* Samma avstånd ovanför och under kortens innehåll */
+  .community-section-title + .community-benefits .benefit-card {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   /* Ikonen placeras ovanför texten */
