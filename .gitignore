@@ -11,11 +11,7 @@ desktop.ini
 *.log
 *~
 
-# Miljöfiler med eventuella hemligheter
-.env
-.env.*
-
-# Lokala API-nycklar och miljövariabler
+# Miljöfiler och API-nycklar
 .env
 .env.*
 !.env.example
