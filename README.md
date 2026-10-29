@@ -44,6 +44,10 @@ node --env-file=.env scripts/update_games.js
 
 Webbplatsen har validerats med W3C:s HTML- och CSS-validatorer, testats på olika skärmstorlekar och kontrollerats med Lighthouse. Samtliga fem sidor uppnådde **100/100 i Accessibility** vid testning i mobilläge.
 
+## Målsättning
+
+Min målsättning med projektet har varit att uppnå **betyget A**. Jag har strävat efter att skapa en genomarbetad och välfungerande webbplats med fokus på responsiv design, tillgänglighet och användarvänlighet. Jag har även lagt stor vikt vid att testa och kvalitetssäkra både kod och funktionalitet.
+
 ## Publicerad webbplats
 
 [Besök Respawn After Bedtime](https://miem85.github.io/respawn-after-bedtime/)
